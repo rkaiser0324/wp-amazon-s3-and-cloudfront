@@ -149,13 +149,6 @@ abstract class AS3CF_Upgrade {
 			return false;
 		}
 
-		// Do we actually have attachments to process?
-		if ( 0 === $this->count_items_to_process() ) {
-			$this->upgrade_finished();
-
-			return false;
-		}
-
 		// If the upgrade status is already set, then we've already initialized the upgrade
 		if ( $upgrade_status = $this->get_upgrade_status() ) {
 			if ( self::STATUS_RUNNING === $upgrade_status ) {
